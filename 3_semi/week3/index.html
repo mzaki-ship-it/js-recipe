@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>メモアプリ</h1>
+    <div>
+      <input type="text" id="memo-input" />
+      <button id="add-button">追加</button>
+    </div>
+    <div id="memo-container">
+      <script>
+        const memoInput = document.getElementById("memo-input")
+        const addButton = document.getElementById("add-button")
+        const memoContainer = document.getElementById("memo-container")
+​
+        let memos = ["1", "2", "3"]
+​
+        if (localStorage.memos) {
+          const memosJson = localStorage.memos
+          memos = JSON.parse(memosJson)
+        }
+​
+        addButton.onclick = function() {
+          memos.push(memoInput.value)
+          localStorage.memos = JSON.stringify(memos)
+          console.log(memos)
+​
+          console.dir(memoInput)
+          console.log(memoInput.value)
+          const div = document.createElement("div")
+          div.textContent = memoInput.value
+          memoContainer.append(div)
+        }
+​
+        for (let index = 0; index < memos.length; index++) {
+          const div = document.createElement("div")
+          div.textContent = memos[index]
+          memoContainer.append(div)
+        }
+      </script>
+    </div>
+  </body>
+</html>
