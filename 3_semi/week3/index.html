@@ -4,45 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="vending-machine-style.css" />
+    <title>自販機</title>
   </head>
   <body>
-    <h1>メモアプリ</h1>
-    <div>
-      <input type="text" id="memo-input" />
-      <button id="add-button">追加</button>
+    <div class="vending-machine">
+      <div class="vending-machine__add-my-money">
+        <button id="add-my-money">
+          バイトして1000円所持金を増やす
+        </button>
+      </div>
+      <div class="vending-machine__display">
+        現在の所持金:<span class="vending-machine__display__money" id="my-money"
+          ></span
+        >円
+      </div>
+      <div class="vending-machine__add-amount-money">
+        <button id="add-amount-money">
+          自販機に100円入れる
+        </button>
+      </div>
+      <div class="vending-machine__display">
+        投入金額:<span class="vending-machine__display__money" id="amount-money"
+          >0</span
+        >円
+      </div>
+      <div class="vending-machine__buy-buttons">
+        <button class="vending-machine__buy-buttons__button" id="tea-button">
+          お茶 100円
+        </button>
+        <button class="vending-machine__buy-buttons__button" id="coke-button">
+          コーラ 130円
+        </button>
+      </div>
+      <div class="vending-machine__items-container" id="display"></div>
     </div>
-    <div id="memo-container">
-      <script>
-        const memoInput = document.getElementById("memo-input")
-        const addButton = document.getElementById("add-button")
-        const memoContainer = document.getElementById("memo-container")
-​
-        let memos = ["1", "2", "3"]
-​
-        if (localStorage.memos) {
-          const memosJson = localStorage.memos
-          memos = JSON.parse(memosJson)
-        }
-​
-        addButton.onclick = function() {
-          memos.push(memoInput.value)
-          localStorage.memos = JSON.stringify(memos)
-          console.log(memos)
-​
-          console.dir(memoInput)
-          console.log(memoInput.value)
-          const div = document.createElement("div")
-          div.textContent = memoInput.value
-          memoContainer.append(div)
-        }
-​
-        for (let index = 0; index < memos.length; index++) {
-          const div = document.createElement("div")
-          div.textContent = memos[index]
-          memoContainer.append(div)
-        }
-      </script>
-    </div>
+    <script src="vending-machine-script.js"></script>
   </body>
 </html>
+
+<!-- === このメッセージは消しても構いません === -->
+
+<!-- GeekSalon WebExpertコースのペアプロで使用するためのテンプレートです。 -->
+<!-- ✅ 👈のメニューから一番下の「👬」のアイコンを選んで -->
+<!--    Live Modeを「Everyone cab edit」に変更した後、 -->
+<!--    「You're live!」の下、「Stop Session」の上、にあるリンクをShareしましょう -->
+<!-- ✅ CodeSandBoxはVS Codeとほぼ同じ様に扱えます。 -->
+<!-- ✅ 👉にある画面が実行画面です。 -->
+<!-- ✅ 👉の👇にある「Console」が実行時のConsoleになります。 -->
+<!--    たまに挙動がおかしい時があるので気をつけましょう。 -->
+
+<!-- =============================== -->

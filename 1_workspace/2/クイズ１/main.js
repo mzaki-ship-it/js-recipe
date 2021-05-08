@@ -7,8 +7,8 @@ const feedback = document.getElementById("feedback")
 
 // クイズの内容
 const quiz = {
-  text: "この星の名前は何でしょう？",
-  image: "Ganymede.jpg",
+  text: "このポケモンは何でしょうか？",
+  image: "rayquaza.png",
   choices: [
     {
       text: "ゴリアテ",
