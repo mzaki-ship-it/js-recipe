@@ -49,6 +49,13 @@ header {
   margin-top: 4px;
   overflow-y: auto;
 }
+.cards-container2 {
+  max-height: calc(100vh - 200px);
+  margin-top: 4px;
+  overflow-y: auto;
+}
+
+
 .card {
   position: relative;
   padding: 4px;

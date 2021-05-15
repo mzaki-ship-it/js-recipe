@@ -1,6 +1,10 @@
 const inputElement = document.getElementById("input-todo")
 const container = document.getElementById("cards-container")
 const addButton = document.getElementById("add-button")
+const inputElement2 = document.getElementById("input-todo2")
+const container2 = document.getElementById("cards-container2")
+const addButton2 = document.getElementById("add-button2")
+
 
 // 追加ボタンを押したときの処理を登録
 addButton.onclick = function() {
@@ -37,3 +41,15 @@ const createCard = function(text) {
 
   return card
 }
+
+
+addButton2.onclick = function() {
+  // カードを作成する
+  const card = createCard(inputElement2.value)
+  container2.append(card)
+
+  // 入力欄を空にする
+  inputElement2.value = ""
+}
+
+
