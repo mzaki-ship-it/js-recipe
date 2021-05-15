@@ -1,7 +1,7 @@
 const imageElement = document.getElementById("dog-image")
 
 // 指定したサーバーにデータを取りに行く
-fetch("https://dog.ceo/api/breeds/image/random")
+fetch("https://dog.ceo/api/breeds/image/random")g
   .then((res) => {
     return res.json() // 結果を json として読み込む
   })
