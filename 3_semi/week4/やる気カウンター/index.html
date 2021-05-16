@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue カウンター</title>
+  </head>
+  <body>
+    <!-- 🚨vueのコードは id=app のタグで囲まれた中に書く -->
+    <div id="app">
+      <h1>
+        {{ appName }}
+      </h1>
+      <!-- <div id="display" v-if="three">{{number}}!!!</div>
+      <div id="display" v-else>🔥{{number}}🔥</div> -->
+      <div id="display">🔥{{display}}🔥</div>
+      <button id="counter" v-on:click="count">+1</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          appName: "Vue Counter",
+          number: 0,
+          three: false
+        },
+        methods: {
+          count: function () {
+            this.number++;
+          }
+        },
+        computed: {
+          display: function () {
+            if (this.number % 3 === 0) {
+              const item = this.number + "!!!";
+              return item;
+            } else {
+              const item = this.number;
+              return item;
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
